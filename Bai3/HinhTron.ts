@@ -4,8 +4,8 @@ class HinhTron {
     _banKinh: number;
 
     constructor(_tam?: ToaDo, _banKinh?: number) {
-        this._tam = _tam || new ToaDo();
-        this._banKinh = _banKinh || 0;
+        if(_tam) this._tam = _tam;
+        if(_banKinh) this._banKinh = _banKinh;
     }
 
     get Tam(): ToaDo {

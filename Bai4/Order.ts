@@ -7,9 +7,9 @@ class Order {
     count: number;
 
     constructor(orderId?: number, orderDate?: Date, lineItems?: OrderDeatil[]) {
-        this.orderId = orderId || 0;
-        this.orderDate = orderDate || new Date();
-        this.lineItems = lineItems || [];
+        if(orderId) this.orderId = orderId;
+        if(orderDate) this.orderDate = orderDate;
+        if(lineItems) this.lineItems = lineItems;
         this.count = 0;
     }
 

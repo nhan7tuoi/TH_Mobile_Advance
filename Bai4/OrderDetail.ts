@@ -4,8 +4,8 @@ class OrderDeatil {
     _product: Product;
 
     constructor(_quantity?: number, _product?: Product) {
-        this._quantity = _quantity || 0;
-        this._product = _product || new Product();
+        if(_quantity) this._quantity = _quantity;
+        if(_product) this._product = _product;
     }
 
     get quantity(): number {

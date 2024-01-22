@@ -4,9 +4,9 @@ class Product {
     _productId: string;
 
     constructor(_description?: string, _price?: number, _productId?: string) {
-        this._description = _description || "";
-        this._price = _price || 0;
-        this._productId = _productId || "";
+        if(_description) this._description = _description;
+        if(_price) this._price = _price;
+        if(_productId) this._productId = _productId;
     }
 
     get description(): string {

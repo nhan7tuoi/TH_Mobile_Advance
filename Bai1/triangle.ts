@@ -3,15 +3,17 @@ class Triangle {
     mb: number;
     mc: number;
 
-    constructor(ma: number, mb: number, mc: number) {
-        if (ma < 0 || mb < 0 || mc < 0 || (ma + mb < mc || ma + mc < mb || mb + mc < ma)) {
-            this.ma = 0;
-            this.mb = 0;
-            this.mc = 0;
-        } else {
-            this.ma = ma;
-            this.mb = mb;
-            this.mc = mc;
+    constructor(ma?: number, mb?: number, mc?: number) {
+        if (ma && mb && mc) {
+            if (ma < 0 || mb < 0 || mc < 0 || (ma + mb < mc || ma + mc < mb || mb + mc < ma)) {
+                this.ma = 0;
+                this.mb = 0;
+                this.mc = 0;
+            } else {
+                this.ma = ma;
+                this.mb = mb;
+                this.mc = mc;
+            }
         }
     }
     get Ma() {
@@ -62,30 +64,30 @@ class Triangle {
         }
         return false;
     }
-    perimeter(){
+    perimeter() {
         return this.ma + this.mb + this.mc;
     }
-    area(){
-        let p = this.perimeter()/2;
-        return Math.sqrt(p*(p-this.ma)*(p-this.mb)*(p-this.mc));
+    area() {
+        let p = this.perimeter() / 2;
+        return Math.sqrt(p * (p - this.ma) * (p - this.mb) * (p - this.mc));
     }
-    info(){
-        if(this.isTriangle()){
-            if(this.isEquilateralTriangle()){
+    info() {
+        if (this.isTriangle()) {
+            if (this.isEquilateralTriangle()) {
                 return "Tam giac deu";
             }
-            if(this.isIsoscelesTriangle()){
+            if (this.isIsoscelesTriangle()) {
                 return "Tam giac can";
             }
-            if(this.isNormalTriangle()){
+            if (this.isNormalTriangle()) {
                 return "Tam giac thuong";
             }
         }
         return "Khong phai tam giac";
     }
-    toString(){
+    toString() {
         return "Tam giac co 3 canh la: " + this.ma + ", " + this.mb + ", " + this.mc + "\n"
-         + this.info() + "\nChu vi: " + this.perimeter() + "\nDien tich: " + this.area();
+            + this.info() + "\nChu vi: " + this.perimeter() + "\nDien tich: " + this.area();
     }
 }
 export default Triangle;

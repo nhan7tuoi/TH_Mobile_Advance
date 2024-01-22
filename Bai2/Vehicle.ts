@@ -4,11 +4,11 @@ class Vehicle {
     price:number;
     capacity:number;
 
-    constructor(owner:string, typeCar:string, price:number, capacity:number) {
-        this.owner = owner;
-        this.typeCar = typeCar;
-        this.price = price;
-        this.capacity = capacity;
+    constructor(owner?:string, typeCar?:string, price?:number, capacity?:number) {
+        if(owner) this.owner = owner;
+        if(typeCar) this.typeCar = typeCar;
+        if(price) this.price = price;
+        if(capacity) this.capacity = capacity;
     }
 
     public getOwner():string {

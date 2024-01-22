@@ -4,9 +4,9 @@ class ToaDo {
     _y : number;
 
     constructor(_ten?: string, _x?: number, _y?: number) {
-        this._ten = _ten || "";
-        this._x = _x || 0;
-        this._y = _y || 0;
+        if(_ten) this._ten = _ten;
+        if(_x) this._x = _x;
+        if(_y) this._y = _y;
     }
 
     get Ten(): string {
